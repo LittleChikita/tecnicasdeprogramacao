@@ -21,7 +21,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
+  * Classe que representa o menu de interação com veículos.
+ * Permite ao usuário cadastrar, excluir, editar ou sair.
  * @author Josias Junior Santos  <josiajrsantos@gmail.com>
  * @date 17/03/2024
  * @brief Class MenuVeiculos
@@ -31,24 +32,27 @@ public class MenuVeiculos {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         List<Veiculo> veiculos = new ArrayList<>();
-        // Inicializando os objetos
+        
+        // Inicializa os objetos de ônibus e caminhão
+        
         Onibus onibus = new Onibus();
         Caminhao caminhao = new Caminhao();
 
-        boolean sair = false;
+        boolean sair = false; // Define a lógica para encerrar o programa quando a opção "Sair" for selecionada
 
-        while (!sair) {
+        while (!sair) { // Utiliza a lógica while para criar o menu
             System.out.println("1- Cadastrar Veiculo");
             System.out.println("2- Excluir Veiculo");
             System.out.println("3- Editar Veiculo");
             System.out.println("4- Sair");
-            int opcao = sc.nextInt();
+            int opcao = sc.nextInt();  // Lê a opção digitada pelo usuário
 
-            switch (opcao) {
+            switch (opcao) {  // Utiliza a lógica switch para cada opção do menu
                 case 1:
                     System.out.println("Qual o tipo de  Veiculo? 1- Onibus 2-Caminhao");
                     int tipo = sc.nextInt();
                     if (tipo == 1) {
+                        // Cadastra um ônibus
                         System.out.println("Qual a placa do Veiculo?");
                         onibus.setPlaca(sc.next());
                         System.out.println("Qual o ano do Veiculo?");
@@ -57,6 +61,7 @@ public class MenuVeiculos {
                         onibus.setAssentos(sc.nextInt());
                         veiculos.add(onibus);
                     } else if (tipo == 2) {
+                        // Cadastra um caminhão
                         System.out.println("Qual a placa do Veiculo?");
                         caminhao.setPlaca(sc.next());
                         System.out.println("Qual o ano do Veiculo?");
@@ -67,6 +72,7 @@ public class MenuVeiculos {
                     }
                     break;
                 case 2:
+                    // Exclui um veículo
                     System.out.println("Qual veiculo deseja excluir?");
                     for (int i = 0; i < veiculos.size(); i++) {
                         System.out.println("Índice: " + i);
@@ -78,7 +84,8 @@ public class MenuVeiculos {
                         veiculos.remove(veiculoExcluir);
                     }
                     break;
-                case 3: 
+                case 3:
+                    // Edita um veículo
                     System.out.println("Qual veiculo deseja editar?");
                     for (int i = 0; i < veiculos.size(); i++) {
                         System.out.println("Índice: " + i);
@@ -111,12 +118,13 @@ public class MenuVeiculos {
                         System.out.println("Índice inválido.");
                     }
                     break;
-            case 4:
-            sair = true;
-            break;
-            default:
-                System.out.println("Opção inválida.");
-                break;
+                case 4:
+                    // Encerra a execução
+                    sair = true;
+                    break;
+                default:
+                    System.out.println("Opção inválida."); 
+                    break;
             }
         }
     }

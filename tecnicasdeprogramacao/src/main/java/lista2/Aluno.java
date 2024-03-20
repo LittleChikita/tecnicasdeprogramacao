@@ -20,35 +20,45 @@ package lista2;
 /**
  *
  * @author Josias Junior Santos  <josiajrsantos@gmail.com>
-* @date 17/03/2024
-* @brief Class Compositores
+* @date 20/03/2024
+* @brief Class Aluno
  */
-public class Compositores extends Musicas{
-private String nomeDoCompositor;
-private String nacionalidade;
+public class Aluno {
+private String nomeDoAluno;
+private String matricula;
+private int ano;
 
-public Compositores(){
+public Aluno(){
 }
 
-public Compositores(String nomeDoCompositor, String nacionalidade){
-    this.nomeDoCompositor = nomeDoCompositor;
-    this.nacionalidade = nacionalidade;
+public void Aluno(String nomeDoAluno, String matricula, int ano){
+    this.ano = ano;
+    this.matricula = matricula;
+    this.nomeDoAluno = nomeDoAluno;
 }
 
-public String getNomeDoCompositor(){
-    return nomeDoCompositor;
+public void setNomeDoAluno(String nomeDoAluno){
+    this.nomeDoAluno = nomeDoAluno;
 }
 
-public void setNomeDoCompositor(String nomeDoCompositor){
-    this.nomeDoCompositor = nomeDoCompositor;
+public String getNomeDoAluno(){
+    return nomeDoAluno;
 }
 
-public String getNacionalidade(){
-    return nacionalidade;
+public void setMatricula(String matricula){
+    this.matricula = matricula;
 }
 
-public void setNacionalidade(String nacionalidade){
-    this.nacionalidade = nacionalidade;
+public String getMatricula(){
+    return matricula;
+}
+
+public void setAno(int ano){
+    this.ano = ano;
+}
+
+public int getAno(){
+    return ano;
 }
 
 }

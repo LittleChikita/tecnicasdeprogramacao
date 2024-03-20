@@ -20,35 +20,41 @@ package lista2;
 /**
  *
  * @author Josias Junior Santos  <josiajrsantos@gmail.com>
-* @date 17/03/2024
-* @brief Class Compositores
+* @date 20/03/2024
+* @brief Class Empresa
  */
-public class Compositores extends Musicas{
-private String nomeDoCompositor;
-private String nacionalidade;
+public class Empresa {
+ private String cnpj;
+    private String razaoSocial;
+    private Endereco endereco;
 
-public Compositores(){
-}
+    public Empresa(String cnpj, String razaoSocial, Endereco endereco) {
+        this.cnpj = cnpj;
+        this.razaoSocial = razaoSocial;
+        this.endereco = endereco;
+    }
 
-public Compositores(String nomeDoCompositor, String nacionalidade){
-    this.nomeDoCompositor = nomeDoCompositor;
-    this.nacionalidade = nacionalidade;
-}
+    public String getCnpj() {
+        return cnpj;
+    }
 
-public String getNomeDoCompositor(){
-    return nomeDoCompositor;
-}
+    public void setCnpj(String cnpj) {
+        this.cnpj = cnpj;
+    }
 
-public void setNomeDoCompositor(String nomeDoCompositor){
-    this.nomeDoCompositor = nomeDoCompositor;
-}
+    public String getRazaoSocial() {
+        return razaoSocial;
+    }
 
-public String getNacionalidade(){
-    return nacionalidade;
-}
+    public void setRazaoSocial(String razaoSocial) {
+        this.razaoSocial = razaoSocial;
+    }
 
-public void setNacionalidade(String nacionalidade){
-    this.nacionalidade = nacionalidade;
-}
+    public Endereco getEndereco() {
+        return endereco;
+    }
 
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
 }

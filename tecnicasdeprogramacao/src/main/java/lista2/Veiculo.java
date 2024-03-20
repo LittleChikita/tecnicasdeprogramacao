@@ -18,28 +18,34 @@
 package lista2;
 
 /**
- *
+  * Esta é a classe abstrata Veiculo, que serve como uma classe base para os tipos de veículos.
+ * Ela possui propriedades comuns a todos os veículos, como placa e ano, e métodos para manipulá-las.
  * @author Josias Junior Santos  <josiajrsantos@gmail.com>
 * @date 17/03/2024
 * @brief Class Veiculo
  */
-public abstract class Veiculo
-{
-    private String placa;
-    private int ano;
+public abstract class Veiculo {
+     // Propriedades de um veículo
+    private String placa;  // A placa do veículo
+    private int ano; // O ano de fabricação do veículo
     
+    // Construtores
     public Veiculo() {
+        // Construtor padrão vazio
     }
     
+    // Construtor com parâmetros para definir a placa e o ano do veículo
     public Veiculo(String placa, int ano) {
         this.placa = placa;
         this.ano = ano;
     }
     
+     // Métodos de acesso para a propriedade 'placa'
     public void setPlaca(String placa){
         this.placa = placa;
     }
     
+    // Métodos de acesso para a propriedade 'ano'
     public void setAno(int ano){
         this.ano = ano;
     }
@@ -52,6 +58,7 @@ public abstract class Veiculo
         return ano;
     }
     
+      // Método toString para representar o veículo como uma string
     @Override
     public String toString(){
         return "Veiculo [placa=" + placa + "]" + "Ano [ano=" + ano + "]";
